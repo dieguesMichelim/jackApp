@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-bla
+      author: diegues.simi
+      runInTransaction: false
+      runOnChange: true
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: bla/create-table-bla.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
