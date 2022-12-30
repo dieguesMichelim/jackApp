@@ -18,9 +18,6 @@ spring:
     open-in-view: false
   datasource:
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:${DATABASE_URL}
-#    username: ${USER}
-#    password: ${PASSWORD}
     url: jdbc:postgresql://localhost:5432/bancodados
     password: postgres
     username: postgres
