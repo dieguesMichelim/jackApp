@@ -5,27 +5,27 @@ server:
 
 spring:
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
-      ddl-auto: update
-    generate-ddl: true
-    database: postgresql
+#      ddl-auto: update # criar tabelas automaticamente
+#    generate-ddl: true
+    database: mysql
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-        default_schema: ${DB_BASE:bancodados}
+        default_schema: ${DB_BASE:railway}
     open-in-view: false
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/bancodados
-    password: postgres
-    username: postgres
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://root:zcvL7SzRc6iUcIMzKoPK@containers-us-west-42.railway.app:6381/railway
+    password: zcvL7SzRc6iUcIMzKoPK
+    username: root
   liquibase:
     contexts: ${spring.profiles.active}
-#    default-schema: //localhost:5432/bancodados
-    default-schema: ${DB_BASE:bancodados}
+    default-schema: ${DB_BASE:railway}
     change-log: classpath:/liquibase/liquibase-changelog.yml
     user: ${DB_LIQUIBASE_USERNAME:${spring.datasource.username}}
     password: ${DB_LIQUIBASE_PASSWORD:${spring.datasource.password}}
     enabled: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
